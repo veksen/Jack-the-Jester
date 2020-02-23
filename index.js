@@ -1,4 +1,3 @@
-```
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
@@ -57,4 +56,3 @@ client.on('message', message =>
 		}
 	}
 });
-```
