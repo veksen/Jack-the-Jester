@@ -1,0 +1,14 @@
+{
+  "name": "jack-and-jill",
+  "version": "1.0.5",
+  "description": "Team Misfortune Discord Bot Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "j0atm0n",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
