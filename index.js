@@ -27,8 +27,7 @@ client.on('message', message => {
 		message.reply('No command ' + commandName + ' found.');
 		return;
 	}
-	else // Included for clarity
-	{
+	else {
 		const command = client.commands.get(commandName);
 		if(command.args && !args.length) {
 			let reply = `You didn't provide any arguments, ${message.author}!`;
