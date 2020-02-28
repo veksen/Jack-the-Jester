@@ -7,7 +7,6 @@ module.exports = {
 			return message.reply('you don\'t have permission to mute members!');
 		}
 
-		const guild = message.guild;
 		const member = message.members.mentions.first();
 		if(!member) {
 			return message.reply('please mention a valid user.');
@@ -18,19 +17,19 @@ module.exports = {
 			const length = Number(time.charAt(0));
 			switch(time.charAt(1)) {
 			case 's':
-				setTimeout(() => {command.execute(unmute, 'Mute timeout expired, auto unmute.');}, length * 1000);
+				setTimeout(() => {this.commands.get('unmute.js').execute('Mute timeout expired, auto unmute.');}, length * 1000);
 				break;
 
 			case 'm':
-				setTimeout(() => {command.execute(unmute, 'Mute timeout expired, auto unmute.');}, length * 60000);
+				setTimeout(() => {this.commands.get('unmute.js').execute('Mute timeout expired, auto unmute.');}, length * 60000);
 				break;
 
 			case 'h':
-				setTimeout(() => {command.execute(unmute, 'Mute timeout expired, auto unmute.');}, length * 3600000);
+				setTimeout(() => {this.commands.get('unmute.js').execute('Mute timeout expired, auto unmute.');}, length * 3600000);
 				break;
 
 			case 'd':
-				setTimeout(() => {command.execute(unmute, 'Mute timeout expired, auto unmute.');}, length * 86400000);
+				setTimeout(() => {this.commands.get('unmute.js').execute('Mute timeout expired, auto unmute.');}, length * 86400000);
 				break;
 
 			default:
@@ -50,5 +49,5 @@ module.exports = {
 		}
 
 		member.addRole(683022945907638308);
-	}
-}
+	},
+};
