@@ -7,6 +7,7 @@ module.exports = {
 			message.reply('you don\'t have permission to ban members!');
 			return;
 		}
+
 		const guild = message.guild;
 		const member = message.mentions.members.first();
 		if(!member) {
@@ -14,6 +15,7 @@ module.exports = {
 		}
 
 		const time = args[1];
+		const guild = message.guild;
 		if(time.length == 2 && !isNaN(Number(time.charAt(0)))) {
 			const length = Number(time.charAt(0));
 			switch(time.charAt(1)) {
@@ -40,7 +42,7 @@ module.exports = {
 			const reason = args.slice(2).join(' ');
 		}
 		else {
-			reason = args.slice(1).join(' ');
+			const reason = args.slice(1).join(' ');
 		}
 		member.ban();
 	},
