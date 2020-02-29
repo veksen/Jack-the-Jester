@@ -8,15 +8,16 @@ module.exports = {
 			return;
 		}
 
-		let member = message.mentions.members.first();
+		const guild = message.guild;
+		const member = message.mentions.members.first();
 		if(!member) {
 			return message.reply('please mention a valid user.');
 		}
 
-		let time = args[1];
+		const time = args[1];
 		const guild = message.guild;
 		if(time.length == 2 && !isNaN(Number(time.charAt(0)))) {
-			let length = Number(time.charAt(0));
+			const length = Number(time.charAt(0));
 			switch(time.charAt(1)) {
 			case 's':
 				setTimeout(() => {guild.unban(member, 'Ban timeout expired, auto unban.');}, length * 1000);
