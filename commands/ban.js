@@ -15,7 +15,6 @@ module.exports = {
 		}
 
 		const time = args[1];
-		const guild = message.guild;
 		if(time.length == 2 && !isNaN(Number(time.charAt(0)))) {
 			const length = Number(time.charAt(0));
 			switch(time.charAt(1)) {
